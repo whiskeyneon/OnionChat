@@ -7,7 +7,7 @@
     {{^user}}
     <form action="/buffer" method="post">
       <label for="user">Register your name: @</label>
-      <input type="text" autofocus="autofocus" maxlength="15" size="15" name="register"  />
+      <input type="text" autofocus="autofocus" maxlength="15" size="15" name="register" autofocus />
       {{#room}}
         <input type="hidden" name="room" value="{{room}}" />
       {{/room}}
@@ -26,7 +26,7 @@
       {{^room}}
       <form action="/buffer" method="post" target="_parent">
         <label for="room">@{{user}} <small>&gt;</small> Join or create a room: #</label>
-        <input type="text" autofocus="autofocus" size="15" maxlength="15" name="join"  />
+        <input type="text" autofocus="autofocus" size="15" maxlength="15" name="join"  autofocus />
         <input type="submit" value="Join" />
       {{/room}}
     {{/user}}

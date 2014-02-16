@@ -1,16 +1,9 @@
-![No (dot) JS](http://www.nodotjs.com/assets/img/logo.gif)
+![OnionChat](http://i.imgur.com/lQpoAzL.png)
 
-# No (dot) JS Chat 
+# OnionChat
+Anonymous realtime chat. No JS.
 
-### Real-time chat, nary a line of client side code. 
-
-##### IE4-tested, mother approved.
-
-[Read](http://blog.accursedware.com/html-only-live-chat:-No.JS/) about it.
-
-See it [in action](http://www.nodotjs.com/).
-
-### Use it
+## Deploy
 
 The only external dependency is redis.  Make sure you have it running locally
 on port 6379.  You should be able to modify the database using `config.ini`
@@ -22,3 +15,7 @@ All other dependencies are in `requirements.txt`.
     python nodotjs/server.py staging
 
 You can also change which port the server runs on in `config.ini`.
+
+## Built on No.js
+
+[Read](http://blog.accursedware.com/html-only-live-chat:-No.JS/) about it.
