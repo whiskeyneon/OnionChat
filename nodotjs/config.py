@@ -27,6 +27,7 @@ if not len(PARSER.read('config.ini')):
         PARSER.set(mode, 'cookie_secret', str(uuid.uuid4()))
         PARSER.set(mode, 'timeout', '30')
         PARSER.set(mode, 'port', '7000')
+        PARSER.set(mode, 'templates_dir', './templates')
 
     try:
         conf = open('config.ini', 'w')
@@ -40,3 +41,4 @@ DB = int(PARSER.get(MODE, 'db'))
 COOKIE_SECRET = PARSER.get(MODE, 'cookie_secret')
 TIMEOUT = int(PARSER.get(MODE, 'timeout'))
 PORT = int(PARSER.get(MODE, 'port'))
+TEMPLATES_DIR = PARSER.get(MODE, 'templates_dir')

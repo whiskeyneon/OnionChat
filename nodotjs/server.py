@@ -4,7 +4,7 @@ import redis
 import chat
 import urllib2
 import json
-from config import DB, COOKIE_SECRET, TIMEOUT, PORT
+from config import DB, COOKIE_SECRET, TIMEOUT, PORT, TEMPLATES_DIR
 
 from brubeck.connections import WSGIConnection
 from brubeck.request_handling import Brubeck
@@ -247,7 +247,7 @@ config = {
                        (r'^/(?P<room>[^/]+)/messages$', MessagesHandler)],
     'cookie_secret': COOKIE_SECRET,
     'db_conn': redis.StrictRedis(db=DB),
-    'template_loader': load_mustache_env('./templates')
+    'template_loader': load_mustache_env(TEMPLATES_DIR)
 }
 
 onionchat = Brubeck(**config)
