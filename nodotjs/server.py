@@ -250,7 +250,7 @@ config = {
     'template_loader': load_mustache_env('./templates')
 }
 
-opengold = Brubeck(**config)
-toilet = opengold.pool.spawn(drain, opengold.db_conn)
-opengold.run()
+onionchat = Brubeck(**config)
+toilet = onionchat.pool.spawn(drain, onionchat.db_conn)
+onionchat.run()
 toilet.kill()
