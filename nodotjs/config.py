@@ -2,21 +2,33 @@ from ConfigParser import SafeConfigParser
 import sys
 import uuid
 
-if len(sys.argv) != 2:
+if len(sys.argv) > 3:
     print """
-Nodotjs must be invoked with a single argument, telling it
+Nodotjs may be invoked with a single argument, telling it
 which mode from `config.ini` to use:
 
 python nodotjs/server.py <MODE>
+
+You may additionally specify the config path by supplying a config.ini path:
+
+python nodotjs/server.py <MODE> <CONFIG_PATH>
 
 Look at `config.ini` for defined modes. Defaults are `production`,
 `staging`, and `test`."""
     exit(1)
 
 MODE = sys.argv[1]
+
+if len(sys.argv) > 2:
+    CONFIG_PATH = sys.argv[2]
+else:
+    CONFIG_PATH = 'config.ini'
+
+print CONFIG_PATH
+
 PARSER = SafeConfigParser()
 
-if not len(PARSER.read('config.ini')):
+if not len(PARSER.read(CONFIG_PATH)):
     print "No config.ini file found in this directory.  Writing a config..."
 
     modes = ['production', 'staging', 'test']
@@ -30,7 +42,7 @@ if not len(PARSER.read('config.ini')):
         PARSER.set(mode, 'templates_dir', './templates')
 
     try:
-        conf = open('config.ini', 'w')
+        conf = open(CONFIG_PATH, 'w')
         PARSER.write(conf)
         conf.close()
     except IOError:
