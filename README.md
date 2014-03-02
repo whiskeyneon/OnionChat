@@ -4,7 +4,7 @@
 ## [chatrapi7fkbzczr.onion](https://chatrapi7fkbzczr.onion)
 Anonymous realtime chat. No JS.
 
-## Production
+## Development
 
 The only external dependency is redis.  Make sure you have it running locally
 on port 6379.  You should be able to modify the database using `config.ini`
@@ -21,7 +21,7 @@ All other dependencies are in `requirements.txt`.
 
 You can also change which port the server runs on in `config.ini`.
 
-## Deploy
+## Deployment
 
 OnionChat uses Brubek as a server, so there's no need to proxy, but you'll probably want to use it as an upstart service. Add 'onionchat.conf' to your /etc/init/:
 
