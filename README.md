@@ -57,6 +57,14 @@ There is plenty that can be done to improve OnionChat. If you have ideas, please
 
 Send pull requests when you have tested your working contributions!
 
+### Donations
+
+You can also contribute to OnionChat by helping pay to keep the server online. You can send Bitcoin to this address!
+
+    1JKvCnFEESTY2TvRsxy8ezisr198pLMDqZ
+
+Your generosity is appreciated!
+
 ## Built on No.js by [Talos](https://github.com/talos/no.js)
 
 [Read](http://blog.accursedware.com/html-only-live-chat:-No.JS/) about it at John's blog.
