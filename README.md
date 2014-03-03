@@ -1,7 +1,7 @@
 ![OnionChat](http://i.imgur.com/lQpoAzL.png)
 
 # [OnionChat](https://chatrapi7fkbzczr.onion)
-## [chatrapi7fkbzczr.onion](https://chatrapi7fkbzczr.onion)
+### [chatrapi7fkbzczr.onion](https://chatrapi7fkbzczr.onion)
 Anonymous realtime chat. No JS.
 
 ## Development
@@ -49,8 +49,14 @@ And set up your keys and hostname in /var/lib/tor/hidden_service/
 
 ### Hardening
 
-Make sure that your server doesn't serve 7000 to the outside world!
+Make sure that your server doesn't serve 7000 to the outside world! Keep your packages up to date, don't run the process as root, you know the drill.
 
-## Built on No.js
+## Contributing
 
-[Read](http://blog.accursedware.com/html-only-live-chat:-No.JS/) about it.
+There is plenty that can be done to improve OnionChat. If you have ideas, please open a ticket to start a discussion, or start working on a previously opened ticket. If you want to get started right now, there is a lot that can be done to improve the mobile experience. 
+
+Send pull requests when you have tested your working contributions!
+
+## Built on No.js by [Talos](https://github.com/talos/no.js)
+
+[Read](http://blog.accursedware.com/html-only-live-chat:-No.JS/) about it at John's blog.
