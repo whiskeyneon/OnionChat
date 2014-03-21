@@ -139,8 +139,6 @@ def flush(r):
         for user in r.smembers(path(ROOMS, room, USERS)):
             if not r.exists(path(ROOMS, room, USERS, user)):
                 _leave_room(r, room, user)
-        if r.scard(path(ROOMS, room, USERS)) == 0:
-            _destroy_room(r, room)
 
 def _create_room(r, room):
     r.hmset(path(ROOMS, room), { TIMESTAMP: time.time() } )
