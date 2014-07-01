@@ -109,7 +109,7 @@ def users(r, room, id=None):
         pubsub.listen().next()
     return r.scard(p), [{ NAME: name } for name in r.smembers(p)]
 
-def messages(r, room, id=None, limit=25):
+def messages(r, room, id=None, limit=255):
     """
     Returns a new ID and an array of messages when a new message occurs.
 
