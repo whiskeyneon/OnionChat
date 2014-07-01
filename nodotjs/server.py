@@ -205,9 +205,9 @@ class MessagesHandler(MustacheRendering, UserMixin, IdMixin):
         id = self.get_id()
 
         try:
-            limit = int(self.get_argument('limit') or 25)
+            limit = int(self.get_argument('limit') or 255)
         except ValueError:
-            limit = 25 
+            limit = 255 
 
         try:
             id, messages = timeout.with_timeout(TIMEOUT,
