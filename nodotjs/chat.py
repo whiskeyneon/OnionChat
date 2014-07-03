@@ -16,6 +16,7 @@ USER = 'user'
 NAME = 'name'
 MESSAGE = 'message'
 TIME = 'time'
+LENGTH = 'length'
 
 def path(key, *path):
     """
@@ -93,9 +94,12 @@ def rooms(r, id=None):
         pubsub.subscribe(p)
         pubsub.listen().next()
     # It's possible for the listener to break us out without changing ID
-    return r.scard(p), [{ NAME: room,
-                          USERS: r.scard(path(ROOMS, room, USERS)) }
-                       for room in r.smembers(p)]
+
+    print r.scard(p)
+
+    rooms = [{ NAME: room, USERS: r.scard(path(ROOMS, room, USERS)), LENGTH: r.llen(path(ROOMS, room, MESSAGES))} for room in r.smembers(p)]
+
+    return r.scard(p), rooms
 
 def users(r, room, id=None):
     """

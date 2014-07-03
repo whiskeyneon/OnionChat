@@ -21,6 +21,22 @@ except ImportError:
 
 TTL = TIMEOUT * 2
 
+shit_chans = [
+
+    'pedo',
+    'cp',
+    'CP',
+    'childporn',
+    'children',
+    'nambla',
+    'child',
+    'pedochat',
+    'jailbait',
+    'jailbate',
+    'MEXICO CP',
+
+]
+
 #
 # MIXINS
 #
@@ -101,6 +117,7 @@ class RoomsHandler(MustacheRendering, IdMixin, UserMixin):
                 'refresh': "0; url=?id=%d" % id, 
                 'rooms': rooms
             }
+
             return self.render_template('rooms', **context)
         except timeout.Timeout:
             return self.redirect('?')
@@ -161,6 +178,10 @@ class RoomHandler(MustacheRendering):
         Render the room frameset (ew).
         """
         room = urllib2.unquote(room)
+
+        if room in shit_chans:
+            return self.redirect('http://www.fbi.gov/about-us/investigate/vc_majorthefts/cac/crimes_against_children')
+
         return self.render_template('room', **{'room': room})
 
 
@@ -199,6 +220,7 @@ class MessagesHandler(MustacheRendering, UserMixin, IdMixin):
         are no new messages.
         """
         room = urllib2.unquote(room)
+
         user = self.get_user()
         if user:
             chat.touch(self.db_conn, user, TTL, room)
