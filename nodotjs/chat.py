@@ -93,12 +93,10 @@ def rooms(r, id=None):
         pubsub = r.pubsub()
         pubsub.subscribe(p)
         pubsub.listen().next()
-    # It's possible for the listener to break us out without changing ID
-
-    print r.scard(p)
 
     rooms = [{ NAME: room, USERS: r.scard(path(ROOMS, room, USERS)), LENGTH: r.llen(path(ROOMS, room, MESSAGES))} for room in r.smembers(p)]
-
+    
+    # It's possible for the listener to break us out without changing ID
     return r.scard(p), rooms
 
 def users(r, room, id=None):
