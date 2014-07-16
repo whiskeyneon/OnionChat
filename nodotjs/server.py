@@ -118,6 +118,13 @@ class RoomsHandler(MustacheRendering, IdMixin, UserMixin):
                 'rooms': rooms
             }
 
+            rooms.sort()
+            rooms.reverse()
+
+            for r in rooms:
+                if r['name'] in shit_chans:
+                    rooms.remove(r)
+
             return self.render_template('rooms', **context)
         except timeout.Timeout:
             return self.redirect('?')
