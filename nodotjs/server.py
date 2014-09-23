@@ -39,7 +39,11 @@ shit_chans = [
     'pedomom',
     'pedodad',
     'childpornsitez',
-    '#childporn'
+    '#childporn',
+    'preteens',
+    'preteen porn',
+    'child porn',
+    '15-18',
 
 ]
 
