@@ -34,6 +34,12 @@ shit_chans = [
     'jailbait',
     'jailbate',
     'MEXICO CP',
+    'CHILDPORN',
+    'pedoempire',
+    'pedomom',
+    'pedodad',
+    'childpornsitez',
+    '#childporn'
 
 ]
 
